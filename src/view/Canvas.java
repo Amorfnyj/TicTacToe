@@ -22,6 +22,30 @@ public class Canvas extends JPanel {
         this.actualPosArray = actualPosArray;
     }
 
+    public void endGame(String endGameTitle) {
+        this.endGameTitle = endGameTitle;
+        isGameActive = false;
+        this.repaint();
+    }
+
+
+    public void setActualPosArray(String[] actualPosArray) {
+        this.actualPosArray = actualPosArray;
+    }
+
+    public void setEmptyCanvas() {
+        this.actualPosArray = emptyPosArray();
+    }
+
+    public void setGameActive(boolean gameActive) {
+
+        isGameActive = gameActive;
+    }
+
+    public boolean isGameActive() {
+        return isGameActive;
+    }
+
     private void initCanvasCoordinatesMap() {
         coordinateMap = new HashMap<>();
 
@@ -95,27 +119,5 @@ public class Canvas extends JPanel {
         g.drawLine(0, CANVAS_HEIGHT / 3 * 2, CANVAS_WIDTH, CANVAS_HEIGHT / 3 * 2);
     }
 
-    public void endGame(String endGameTitle) {
-        this.endGameTitle = endGameTitle;
-        isGameActive = false;
-        this.repaint();
-    }
 
-
-    public void setActualPosArray(String[] actualPosArray) {
-        this.actualPosArray = actualPosArray;
-    }
-
-    public void setEmptyCanvas() {
-        this.actualPosArray = emptyPosArray();
-    }
-
-    public void setGameActive(boolean gameActive) {
-
-        isGameActive = gameActive;
-    }
-
-    public boolean isGameActive() {
-        return isGameActive;
-    }
 }

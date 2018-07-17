@@ -22,36 +22,9 @@ public class MainFrame extends JFrame {
         configureCanvas(canvas);
     }
 
-    private void configureCanvas(Canvas canvas) {
-
-
-        this.add(canvas);
-    }
-
-    private void configureMainFrame() {
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
-        this.setLocationRelativeTo(null);
-        this.setTitle("TicTacToe");
-        this.setResizable(false);
-        this.setLayout(new BorderLayout());
-    }
-
-    public Canvas getCanvas() {
-        return canvas;
-    }
-
     public void initializeCanvasMouseListener(Controller controller) {
         canvas.addMouseListener(new MouseClickOnCanvasListener(controller));
     }
-
-    /**
-     * Метод, который обновляет поле. Делает все квадраты пустыми.
-     */
-    public void setEmptyCanvas() {
-        canvas.setEmptyCanvas();
-    }
-
 
     /**
      * Метод, который рисует новое поле с данными, которые передаются в аргументе.
@@ -65,6 +38,7 @@ public class MainFrame extends JFrame {
 
     /**
      * Метод, который следует вызвать, когда игра закончилась
+     *
      * @param winPlayer - выигравший игрок
      */
     public void endGame(String endGameTitle) {
@@ -79,5 +53,18 @@ public class MainFrame extends JFrame {
 
     public boolean isGameOver() {
         return !canvas.isGameActive();
+    }
+
+    private void configureCanvas(Canvas canvas) {
+        this.add(canvas);
+    }
+
+    private void configureMainFrame() {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+        this.setLocationRelativeTo(null);
+        this.setTitle("TicTacToe");
+        this.setResizable(false);
+        this.setLayout(new BorderLayout());
     }
 }

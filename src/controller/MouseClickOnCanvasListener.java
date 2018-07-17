@@ -1,7 +1,5 @@
 package controller;
 
-import controller.Controller;
-
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -15,6 +13,12 @@ public class MouseClickOnCanvasListener implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
         int X = e.getX();
         int Y = e.getY();
 
@@ -26,14 +30,9 @@ public class MouseClickOnCanvasListener implements MouseListener {
             System.out.println("clicked square number is " + clickedPosition);
             controller.processNewClick(clickedPosition);
         } else {
+            System.out.println("New game has started!");
             controller.gameOver();
         }
-
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-
     }
 
     @Override
