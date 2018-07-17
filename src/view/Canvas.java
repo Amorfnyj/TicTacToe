@@ -98,6 +98,7 @@ public class Canvas extends JPanel {
     public void endGame(String endGameTitle) {
         this.endGameTitle = endGameTitle;
         isGameActive = false;
+        this.repaint();
     }
 
 
